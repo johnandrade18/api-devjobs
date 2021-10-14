@@ -27,13 +27,14 @@ app.use(cookieParser());
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-        mongoUrl: process.env.MONGODB_URI || 'mongodb://localhost:27017/devjobs'
+        mongoUrl: process.env.DATABASE || 'mongodb://localhost:27017/devjobs'
     })
 }));
 
 app.use('/api', router)
 
 const port = process.env.PORT || 4000;
+app.set("json spaces", 4);
 app.listen(port, () => {
   console.log("Servidor Corriendo en el puerto: " + port);
 });

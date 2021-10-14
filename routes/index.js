@@ -1,15 +1,15 @@
 const express = require("express");
 
-// const VacancyController = require("../controllers/vacancy.controller");
-const UserController = require("../controllers/user.controller");
-const AuthController = require("../controllers/auth.controller");
+const VacancyController = require("../controllers/vacancy.Controller");
+const UserController = require("../controllers/user.Controller");
+const AuthController = require("../controllers/auth.Controller");
 
 const router = express.Router();
 
-// router.get('/vancancy', VacancyController.getVacancy);
+router.get('/vancancy', VacancyController.getVacancy);
 router.post('/auth/signup', UserController.createUser);
 router.post("/auth/signin", AuthController.signIn);
-// router.post("/vancancy/create", VacancyController.createVacancy);
+router.post("/vancancy/create", VacancyController.createVacancy);
 
 // router.post(
 //       "/auth/signup", () =>{
